@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="article"
+            type="com.example.nytimes.domain.entity.ArticleItem" />
+
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dim5">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/startGuideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent=".05" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/endGuideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent=".95" />
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dim20"
+                android:text="@{article.title}"
+                android:textColor="@color/cl_gray_text"
+                android:textSize="@dimen/_13sdp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@id/endGuideline"
+                app:layout_constraintStart_toStartOf="@id/startGuideline"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvAbstract"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dim5"
+                android:text="@{article.abstract}"
+                android:textColor="@color/cl_gray_text"
+                android:textSize="@dimen/_13sdp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@id/endGuideline"
+                app:layout_constraintStart_toStartOf="@id/startGuideline"
+                app:layout_constraintTop_toBottomOf="@id/tvTitle" />
+
+            <TextView
+                android:id="@+id/type_text_tv"
+                android:layout_width="@dimen/dim100"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dim5"
+                android:layout_marginEnd="@dimen/dim20"
+                android:text="@string/label_type"
+                android:textColor="@color/cl_gray"
+                android:textSize="@dimen/_13sdp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/startGuideline"
+                app:layout_constraintTop_toBottomOf="@id/tvAbstract" />
+
+            <TextView
+                android:id="@+id/tvType"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@{article.type}"
+                android:textColor="@color/cl_gray_text"
+                android:textSize="@dimen/_13sdp"
+                android:textStyle="bold"
+                android:transitionName="type"
+                app:layout_constraintEnd_toEndOf="@id/endGuideline"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toEndOf="@id/type_text_tv"
+                app:layout_constraintTop_toBottomOf="@id/tvAbstract"
+                app:layout_constraintTop_toTopOf="@id/type_text_tv" />
+
+            <TextView
+                android:id="@+id/tvByline_text"
+                android:layout_width="@dimen/dim100"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dim10"
+                android:text="@string/label_tagby"
+                android:textColor="@color/cl_gray"
+                android:textSize="@dimen/_13sdp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/startGuideline"
+                app:layout_constraintTop_toBottomOf="@id/type_text_tv" />
+
+            <TextView
+                android:id="@+id/tvByline"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:text="@{article.byline}"
+                android:textColor="@color/cl_gray_text"
+                android:textSize="@dimen/_13sdp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@id/endGuideline"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@id/tvByline_text"
+                app:layout_constraintTop_toBottomOf="@id/tvType"
+                app:layout_constraintTop_toTopOf="@id/tvByline_text" />
+
+            <TextView
+                android:id="@+id/tvSection_text"
+                android:layout_width="@dimen/dim100"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dim10"
+                android:text="@string/label_section"
+                android:textColor="@color/cl_gray"
+                android:textSize="@dimen/_13sdp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/startGuideline"
+                app:layout_constraintTop_toBottomOf="@id/tvByline_text" />
+
+            <TextView
+                android:id="@+id/tvSection"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@{article.section}"
+                android:textColor="@color/cl_gray_text"
+                android:textSize="@dimen/_13sdp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@id/endGuideline"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toEndOf="@id/tvSection_text"
+                app:layout_constraintTop_toBottomOf="@id/tvByline"
+                app:layout_constraintTop_toTopOf="@id/tvSection_text" />
+
+            <TextView
+                android:id="@+id/tvDate_text"
+                android:layout_width="@dimen/dim100"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dim10"
+                android:text="@string/label_date"
+                android:textColor="@color/cl_gray"
+                android:textSize="@dimen/_13sdp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/startGuideline"
+                app:layout_constraintTop_toBottomOf="@id/tvSection_text" />
+
+            <TextView
+                android:id="@+id/tvDate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@{article.publishedDate}"
+                android:textColor="@color/cl_gray_text"
+                android:textSize="@dimen/_13sdp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@id/endGuideline"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toEndOf="@id/tvDate_text"
+                app:layout_constraintTop_toBottomOf="@id/tvSection_text"
+                app:layout_constraintTop_toTopOf="@id/tvDate_text" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>

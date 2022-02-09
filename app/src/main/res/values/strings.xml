@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">NYTimes-KT</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">Articles</string>
+    <string name="second_fragment_label">Article Details</string>
+
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+    <string name="title_text">Title</string>
+    <string name="label_desc">Description</string>
+    <string name="label_type">Article Type</string>
+    <string name="label_tagby">Tagged By</string>
+    <string name="label_section">Section</string>
+    <string name="label_date">Date</string>
+</resources>
